@@ -1,8 +1,6 @@
 from flask import Flask
+from flask import render_template, Blueprint, request, url_for, redirect, flash, jsonify, session
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder = './public', template_folder="./static")
 
-@app.route('/')
-@app.route('/index')
-def index():
-    return "yoooooooo"
+import website.directory.views
