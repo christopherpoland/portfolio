@@ -42,8 +42,9 @@ export default class Contact extends Component {
       message: this.state.message
     }
     document.getElementById('contactWaiting').style.display = 'block';
-    var url = window.location + 'email';
-    fetch( url, {
+
+    var url = String(window.location).split('/')[0] + '/email';
+    fetch(url, {
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
