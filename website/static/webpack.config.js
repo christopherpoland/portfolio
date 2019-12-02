@@ -21,8 +21,14 @@ const config = {
   {
    test: /\.css$/,
    loader: 'style-loader!css-loader?modules'
-  }
-  ]
+ },
+ {
+  test: /\.(jpe?g|png|gif|woff|woff2|eot|ttf|svg)$/,
+  loader: 'url-loader?limit=8192',
+  options: {
+         name: '[path][name].[ext]',
+       },
+ }]
  }
 };
 module.exports = config;
