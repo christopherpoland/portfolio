@@ -1,13 +1,29 @@
 const webpack = require('webpack');
 const resolve = require('path').resolve;
+// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+// const HtmlWebpackPlugin = require('html-webpack-plugin');
+// const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const config = {
- devtool: 'eval-source-map',
+ devtool: false,
  entry: [__dirname + '/js/index.jsx'],
+ plugins: [
+      // new CleanWebpackPlugin(),
+      // new BundleAnalyzerPlugin(),
+      // new HtmlWebpackPlugin({
+      //   title: 'Output Management'
+      // })
+    ],
+ optimization: {
+      minimizer: [new UglifyJsPlugin()],
+ },
  output:{
-      path: resolve('../public'),
+      path: resolve('../public/'),
+      // path: __dirname + '/dist',
       filename: 'bundle.js',
-      publicPath: resolve('../public')
-},
+      publicPath: resolve('../public/')
+      // publicPath: '/'
+ },
  resolve: {
   extensions: ['.js','.jsx','.css']
  },
@@ -29,6 +45,7 @@ const config = {
          name: '[path][name].[ext]',
        },
  }]
- }
+ },
+ mode: 'production'
 };
 module.exports = config;

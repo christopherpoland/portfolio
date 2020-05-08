@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGithub } from '@fortawesome/free-brands-svg-icons'
-import { faAngellist } from '@fortawesome/free-brands-svg-icons'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faGithub } from '@fortawesome/free-brands-svg-icons/faGithub'
+import { faAngellist } from '@fortawesome/free-brands-svg-icons/faAngellist'
+library.add(faGithub, faAngellist)
 export default class Navbar extends Component {
   constructor(props) {
     super(props);
@@ -16,7 +18,6 @@ export default class Navbar extends Component {
   pageChange(site) {
     window.location = site;
   }
-
     render() {
        return (
           <div className="navbar-container">

@@ -30,6 +30,3 @@ def email():
         res = make_response(jsonify({"message": "OK"}), 200)
 
         return res
-@app.route('/<path:path>', methods=('GET', 'POST'))
-def catch_all(path):
-    return ("<h1>404</h1>")
