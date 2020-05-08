@@ -12,7 +12,7 @@ export default class About extends Component {
              <Header header="ABOUT ME"/>
              <div className="about-container">
                <div className="about-photo-container">
-                <img src = {'https://cpoland.s3.us-east-2.amazonaws.com/about-photo.jpg'} className="about-photo"/>
+                <img src = {'https://cpoland.s3.us-east-2.amazonaws.com/rsz_1about-photo.jpg'} className="about-photo"/>
                </div>
                <div className="about-text">
                 <p>I am a Full Stack Web Developer based in Vancouver, Canada. I love creating clean back end code and integrating it into an experience for the user that is both functional and aesthetically pleasing. It has been a pleasure learning my current frameworks and I am excited to improve on them, as well as learn more technologies.</p>
